@@ -1,0 +1,28 @@
+# Ignored dirs
+crash-reports/
+downloads/
+essential/
+modernfix/
+saves/
+schematics/
+screenshots/
+shaderpacks/
+trees/
+xaero/
+XaeroWaypoints*/
+
+# Ignored files
+.qmenu_opened.marker
+minecraftinstance.json
+patchouli_data.json
+rhino.local.properties
+usercache.json
+usernamecache.json
+
+# Ignored extensions
+**/*.log
+**/*.gz
+**/*.DS_Store
+**/*.jar
+**/*.code-workspace
+**/*.zip
