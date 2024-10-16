@@ -1,0 +1,6 @@
+tutorialStep:none
+realmsNotifications:false
+guiScale:2
+hideBundleTutorial:true
+darkMojangStudiosBackground:true
+skipMultiplayerWarning:true
