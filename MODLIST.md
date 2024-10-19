@@ -3,7 +3,7 @@
 | AmbientSounds 6 | 6.1.1 | AmbientSounds_FORGE_v6.1.1_mc1.20.1.jar
 | AppleSkin | 2.5.1 | appleskin-forge-mc1.20.1-2.5.1.jar
 | Aquamirae | API15 | aquamirae-6.API15.jar
-| Architectury API | architectury-9.2.14-forge.jar
+| Architectury API | 9.2.14 | architectury-9.2.14-forge.jar
 | Balm | 7.3.9 | balm-forge-1.20.1-7.3.9-all.jar
 | BiomeInfo | 1.6 | biomeinfo-1.20.1-1.6.jar
 | BlockUI | 1.0.186-beta | blockui-1.20.1-1.0.186-beta.jar
@@ -25,7 +25,7 @@
 | Create Ore Excavation | 1.5.2 | createoreexcavation-1.20-1.5.2.jar
 | CreativeCore | 2.12.17 | CreativeCore_FORGE_v2.12.17_mc1.20.1.jar
 | Curios API | 5.10.0 | curios-forge-5.10.0+1.20.1.jar
-| Cyclic | 1.12.15 | Cyclic-1.20.1-1.12.14.jar
+| Cyclic | 1.12.15 | Cyclic-1.20.1-1.12.15.jar
 | True Darkness | 2.0.103 | darkness-forge-1.20.1-2.0.103-fork.jar
 | Delightful | 3.6 | Delightful-1.20.1-3.6.jar
 | Distant Horizons: A Level of Detail Mod | 2.2.1-a | DistantHorizons-2.2.1-a-1.20.1-forge-fabric.jar
@@ -66,7 +66,7 @@
 | LootJS: KubeJS Addon | 2.12.0 | lootjs-forge-1.20.1-2.12.0.jar
 | Lootr | 0.7.34.89 | lootr-forge-1.20-0.7.34.89.jar
 | Moog's End Structures | 1.3.1 | mes-1.3.1-1.20-forge.jar
-| MineColonies | 1.1.691 | minecolonies-1.20.1-1.1.689-snapshot.jar
+| MineColonies | 1.1.691 | minecolonies-1.20.1-1.1.691-snapshot.jar
 | ModernFix | 5.19.4 | modernfix-forge-5.19.4+mc1.20.1.jar
 | Mouse Tweaks | 2.25.1 | MouseTweaks-forge-mc1.20.1-2.25.1.jar
 | Multi-Piston | 1.2.43 | multipiston-1.20-1.2.43-RELEASE.jar
