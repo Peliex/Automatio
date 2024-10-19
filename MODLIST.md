@@ -52,7 +52,7 @@
 | FTB XMod Compat | 2.1.1 | ftb-xmod-compat-forge-2.1.1.jar
 | GeckoLib | 4.4.9 | geckolib-forge-1.20.1-4.4.9.jar
 | GlitchCore | 0.0.1.1 | GlitchCore-forge-1.20.1-0.0.1.1.jar
-| ImmersiveEngineering-1.20.1-10.1.0-171.jar
+| Immersive Engineering | 1.0-171 | ImmersiveEngineering-1.20.1-10.1.0-171.jar
 | Inventory HUD+ | 3.4.26 | inventoryhud.forge.1.20.1-3.4.26.jar
 | Jade | 11.12.1 | Jade-1.20.1-Forge-11.12.1.jar
 | JadeAddons | 5.3.1 | JadeAddons-1.20.1-Forge-5.3.1.jar
@@ -89,7 +89,7 @@
 | Sophisticated Backpacks | 3.20.11.1115 | sophisticatedbackpacks-1.20.1-3.20.11.1115.jar
 | Sophisticated Core | 0.6.34.718 | sophisticatedcore-1.20.1-0.6.34.718.jar
 | Sophisticated Storage | 0.10.45.912 | sophisticatedstorage-1.20.1-0.10.45.912.jar
-| Steam_Rails-1.6.6+forge-mc1.20.1.jar
+| Create: Steam 'n' Rails | 1.6.6 | Steam_Rails-1.6.6+forge-mc1.20.1.jar
 | Structurize | 1.0.760 | structurize-1.20.1-1.0.760-snapshot.jar
 | Tectonic | 2.4.1 | tectonic-forge-1.20.1-2.4.1.jar
 | TerraBlender | 3.0.1.7 | TerraBlender-forge-1.20.1-3.0.1.7.jar
