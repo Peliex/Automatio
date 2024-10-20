@@ -54,6 +54,9 @@
   "jadeaddons": {
     "equipment_requirement": ""
   },
+  "immersiveengineering": {
+    "multiblock_icon": true
+  },
   "delightful": {
     "crop_progress": true,
     "pie_icons": true,
@@ -90,5 +93,12 @@
   },
   "corpse": {
     "corpse": true
+  },
+  "productivebees": {
+    "solitary_nest": true,
+    "jar": true,
+    "canvas_beehive": true,
+    "bee_attributes": true,
+    "productive_bee": true
   }
 }

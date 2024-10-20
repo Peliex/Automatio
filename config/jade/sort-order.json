@@ -17,6 +17,9 @@
   "dynamictrees:pod": null,
   "dynamictrees:rooty": null,
   "dynamictrees:rooty_water": null,
+  "immersiveengineering:multiblock_icon": null,
+  "immersiveengineering:multiblock_inventory": null,
+  "immersiveengineering:multiblock_tank": null,
   "jade:block_face": null,
   "jade:distance": null,
   "jade:mod_name": null,
@@ -64,5 +67,9 @@
   "minecraft:total_enchantment_power": null,
   "minecraft:villager_profession": null,
   "minecraft:waxed": null,
-  "minecraft:zombie_villager": null
+  "minecraft:zombie_villager": null,
+  "productivebees:canvas_beehive": null,
+  "productivebees:jar": null,
+  "productivebees:productive_bee": null,
+  "productivebees:solitary_nest": null
 }
