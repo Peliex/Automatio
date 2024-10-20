@@ -4,18 +4,18 @@
 	#Inventory HUD mini mode
 	invMini = false
 	#Inventory HUD vertical mode
-	invVert = false
+	invVert = true
 	#Inventory HUD alpha
 	#Range: 0 ~ 100
-	invAlpha = 0
+	invAlpha = 100
 	#Toggle on by default
 	byDefault = true
 	#Animate recently picked up items
-	animatedInv = false
+	animatedInv = true
 	#Hide background if inventory is empty
-	hideBackground = false
+	hideBackground = true
 	#Show Inventory HUD when debug menu is open
-	invWithDebug = true
+	invWithDebug = false
 
 #Settings for ArmorStatus HUD
 [armorhud]
@@ -49,7 +49,7 @@
 	#Range: 50 ~ 150
 	armScale = 100
 	#Show Armor HUD when debug menu is open
-	armWithDebug = true
+	armWithDebug = false
 	#Show arrows count when no weapon in your hands
 	showArrowsWithoutWeapon = true
 
@@ -75,7 +75,7 @@
 	#Disable icons for effects in this list
 	effectsBlackList = []
 	#Show Potion HUD when debug menu is open
-	potWithDebug = true
+	potWithDebug = false
 	#Show all levels of effects
 	potionLevels = false
 
@@ -86,37 +86,37 @@
 	invValign = "BOTTOM"
 	#Inventory HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	invHalign = "MIDDLE"
+	invHalign = "RIGHT"
 	#Inventory HUD position (X)
 	#Range: -9999 ~ 9999
-	xPos = 0
+	xPos = 57
 	#Inventory HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPos = 150
+	yPos = 164
 	#Armor HUD vertical align
 	#Allowed Values: TOP, CENTER, BOTTOM
 	armValign = "BOTTOM"
 	#Armor HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	armHalign = "MIDDLE"
+	armHalign = "RIGHT"
 	#Armor HUD position (X)
 	#Range: -9999 ~ 9999
-	xArmPos = 0
+	xArmPos = 151
 	#Armor HUD position (Y)
 	#Range: -9999 ~ 9999
-	yArmPos = 70
+	yArmPos = 74
 	#Potion HUD vertical align
 	#Allowed Values: TOP, CENTER, BOTTOM
 	potValign = "TOP"
 	#Potion HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	potHalign = "LEFT"
+	potHalign = "RIGHT"
 	#Potion HUD position (X)
 	#Range: -9999 ~ 9999
-	xPotionPos = 20
+	xPotionPos = 62
 	#Potion HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPotionPos = 20
+	yPotionPos = 2
 	#Helmet position (X)
 	#Range: -9999 ~ 9999
 	helmPosX = 103
@@ -219,5 +219,5 @@
 	#Last notified mod version
 	lastNotifiedVersion = "5.6.0+mc.1.20.1-forge"
 	#Notify more than once
-	keepNotifying = true
+	keepNotifying = false
 

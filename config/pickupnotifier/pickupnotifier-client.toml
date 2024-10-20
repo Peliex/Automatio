@@ -3,7 +3,7 @@
 	#Should the picked up amount be shown when it's just a single item.
 	display_single_count = true
 	#Add the total amount of an item in your inventory to the entry.
-	inventory_count = false
+	inventory_count = true
 	#Mode for drawing a background behind entries for better visibility. 'CHAT' is similar to the chat background, 'TOOLTIP' uses the tooltip background rendering instead.
 	#Allowed Values: NONE, CHAT, TOOLTIP
 	entry_background = "NONE"
@@ -27,13 +27,13 @@
 	offset_x = 8
 	#Offset on y-axis from screen border.
 	#Range: > 0
-	offset_y = 4
+	offset_y = 400
 	#Percentage of relative screen height entries are allowed to fill at max.
 	#Range: 0.0 ~ 1.0
 	max_height = 0.5
 	#Scale of entries. A lower scale will make room for more rows to show. Works together with "GUI Scale" option in "Video Settings".
 	#Range: 1 ~ 24
-	scale = 4
+	scale = 5
 
 [general]
 	#Prevent items from being added to the pick-up log when in creative mode.
