@@ -1,0 +1,8 @@
+{
+    "priority": 1001,
+    "panel": "obscure_tooltips:golden",
+    "icon": "obscure_tooltips:rare",
+    "filter": {
+        "rarity": "technology"
+    }
+}
