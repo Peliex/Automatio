@@ -22,7 +22,6 @@ jobs:
       project_version: ${{ steps.project_version.outputs.tag }}
       project_name: ${{ steps.project_name.outputs.value }}
       mc_version: ${{ steps.mc_version.outputs.value }}
-      changelog: ${{ steps.changelog.outputs.description }}
 
     steps:
     - name: Checkout
@@ -47,12 +46,6 @@ jobs:
       with:
         file_path: ".github/buildtools/modpack/manifest.json"
         prop_path: "minecraft.version"
-
-    - name: Changelog Parser
-      id: changelog
-      uses: coditory/changelog-parser@v1.0.2
-      with:
-        path: CHANGELOG.md
 
   build-curseforge:
     name: Build CurseForge Pack
@@ -110,7 +103,5 @@ jobs:
         project-id: ${{ vars.CF_MODPACK_ID }}
         display-name: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version}}
         modpack-path: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip
-        changelog: ${{ needs.info.outputs.changelog }}
-        changelog-format: markdown
         game-version: ${{ needs.info.outputs.mc_version }}
         release-type: ${{ env.RELEASE_TYPE }}
