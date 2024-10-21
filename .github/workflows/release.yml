@@ -1,0 +1,109 @@
+name: Build
+run-name: Build #${{ github.run_number }} by @${{ github.actor }}
+
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  RELEASE_TYPE: "RELEASE"
+
+jobs:
+  info:
+    name: Project Info
+    runs-on: ubuntu-latest
+    outputs:
+      project_version: ${{ steps.project_version.outputs.tag }}
+      project_name: ${{ steps.project_name.outputs.value }}
+      mc_version: ${{ steps.mc_version.outputs.value }}
+      changelog: ${{ steps.changelog.outputs.description }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.1
+
+    - name: Get tag
+      id: project_version
+      uses: "WyriHaximus/github-action-get-previous-tag@v1.4.0"
+      with:
+        fallback: build.${{ github.run_number }}
+
+    - name: Get project name
+      id: mc_version
+      uses: ActionsTools/read-json-action@main
+      with:
+        file-path: ".github/buildtools/modpack/manifest.json"
+        prop_path: "minecraft.version"
+
+    - name: Changelog Parser
+      id: changelog
+      uses: coditory/changelog-parser@v1.0.2
+      with:
+        path: CHANGELOG.md
+
+  build-curseforge:
+    name: Build CurseForge Pack
+    runs-on: ubuntu-latest
+    needs: [info]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.1
+
+    - name: Replace strings
+      shell: bash
+      run: |
+        VERSION=${{needs.info.outputs.project_version }}
+        sed -i -e "s/DEV/${VERSION}/g" ./.github/buildtools/modpack/manifest.json
+      
+    - name: Export CurseForge
+      run: |
+        mkdir -p overrides
+        mv -vf {config,defaultconfigs,kubejs} overrides/
+        mv -vf .github/buildtools/modpack/manifest.json ./
+        mv -vf .github/buildtools/modpack/modlist.html ./
+        zip -r ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip manifest.json modlist.html overrides
+    
+    - name: Upload zip CurseForge
+      uses: actions/upload-artifact@v4.4.3
+      with:
+        name: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge
+        path: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip
+        retention-days: 5
+
+  release-curseforge:
+    name: Deploy to CurseForge
+    needs: [info, build-curseforge]
+    runs-on: ubuntu-latest
+    outputs:
+      cf_release_id: ${{ steps.cf_release.outputs.id }}
+    steps:
+    - name: Check if CF_API_TOKEN exist
+      shell: bash
+      run: |
+        if [ "${{ secrets.CF_API_TOKEN }}" == '' ]; then
+          echo '::error::No value found for secret key `CF_API_TOKEN`. See https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository' && exit 1
+        fi
+
+    - name: Download cf modpack
+      uses: actions/download-artifact@v4.1.8
+      with:
+        name: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge
+
+    - name: Upload Curseforge
+      id: cf_release
+      uses: Xikaro/upload-curseforge-modpack-action@1.1.1
+      with:
+        api-token: ${{ secrets.CF_API_TOKEN }}
+        project-id: ${{ vars.CF_MODPACK_ID }}
+        display-name: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version}}
+        modpack-path: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip
+        changelog: ${{ needs.info.outputs.changelog }}
+        changelog-format: markdown
+        game-version: ${{ needs.info.outputs.mc_version }}
+        release-type: ${{ env.RELEASE_TYPE }}
