@@ -103,6 +103,9 @@ jobs:
         project-id: ${{ vars.CF_MODPACK_ID }}
         display-name: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version}}
         modpack-path: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip
+        server-display-name: ${{needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version}}
         modpack-server-path: ${{ needs.info.outputs.project_name }}-${{ needs.info.outputs.project_version }}-curseforge.zip
         game-version: ${{ needs.info.outputs.mc_version }}
         release-type: ${{ env.RELEASE_TYPE }}
+        changelog: ''
+        changelog-format: markdown
