@@ -35,10 +35,17 @@ jobs:
         fallback: build.${{ github.run_number }}
 
     - name: Get project name
+      id: project_name
+      uses: ActionsTools/read-json-action@main
+      with:
+        file_path: ".github/buildtools/modpack/manifest.json"
+        prop_path: "name"
+
+    - name: Get project version
       id: mc_version
       uses: ActionsTools/read-json-action@main
       with:
-        file-path: ".github/buildtools/modpack/manifest.json"
+        file_path: ".github/buildtools/modpack/manifest.json"
         prop_path: "minecraft.version"
 
     - name: Changelog Parser
