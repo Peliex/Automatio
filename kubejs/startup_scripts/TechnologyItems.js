@@ -1,36 +1,60 @@
 //TODO: For the love of god make a asset file for a list of items to iterate over to save this file from becoming an absolute monolith
-const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity");
-const technologyRarity = $Rarity.create("TECHNOLOGY", Color.RED);
+const $TechnologyRarity = Java.loadClass("net.minecraft.world.item.Rarity");
+const technologyRarity = $TechnologyRarity.create("TECHNOLOGY", Color.RED);
 
-const createItemList = [
-    "create:wrench",
-    "create:copper_backtank",
-    "create:netherite_backtank",
-    "create:linked_controller",
-    "create:potato_cannon",
-    "create:extendo_grip",
-    "create:wand_of_symmetry",
-    "create:schematicannon",
-    "create:shaft",
-    "create:cogwheel",
-    "create:large_cogwheel",
-    "create:gearbox",
-    "create:vertical_gearbox",
-    "create:clutch",
-    "create:gearshift",
-    "create:encased_chain_drive",
-    "create:adjustable_chain_gearshift",
-    "create:belt_connector",
-    "create:water_wheel",
-    "create:large_water_wheel",
-    "create:encased_fan"
+const technologyItemLists = [
+    {
+        "modName": "create",
+        "modList":
+        [
+            // Equipment
+            "wrench",
+            "copper_backtank",
+            "netherite_backtank",
+            "linked_controller",
+            "potato_cannon",
+            "extendo_grip",
+            "wand_of_symmetry",
+
+            // Blocks
+            "shaft",
+            "cogwheel",
+            "large_cogwheel",
+            "gearbox",
+            "vertical_gearbox",
+            "clutch",
+            "gearshift",
+            "encased_chain_drive",
+            "adjustable_chain_gearshift",
+            "belt_connector",
+            "water_wheel",
+            "large_water_wheel",
+            "encased_fan",
+            "nozzle",
+            "turntable",
+            "hand_crank",
+            "cuckoo_clock",
+            "millstone",
+            "crushing_wheel",
+            "mechanical_press",
+            "mechanical_mixer",
+            "basin",
+            "empty_blaze_burner",
+            "blaze_burner",
+            "depot",
+            "weighted_ejector",
+            "chute",
+            "smart_chute",
+            "speedometer",
+            "stressometer",
+            "wooden_bracket"
+        ]
+    }
 ]
 
 ItemEvents.modification(event => {
-    for (var i = 0; i < createItemList.length; i++)
+    for (var i = 0; i < technologyItemLists.length; i++)
     {
-        event.modify(createItemList[i], item => {
-            item.rarity = 'TECHNOLOGY';
-        });
-    };
+        global.itemListSetRarity(event, 'TECHNOLOGY', technologyItemLists[i])
+    }
 });

@@ -1,0 +1,8 @@
+{
+    "priority": 1001,
+    "panel": "automatio:emerald",
+    "icon": "obscure_tooltips:default",
+    "filter": {
+        "rarity": "material"
+    }
+}
