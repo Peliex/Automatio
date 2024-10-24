@@ -49,6 +49,13 @@ const technologyItemLists = [
             "stressometer",
             "wooden_bracket"
         ]
+    },
+    {
+        "modName": "immersiveengineering",
+        "modList": [
+            // Blocks
+            "workbench"
+        ]
     }
 ]
 
